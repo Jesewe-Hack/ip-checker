@@ -1,2 +1,2 @@
-# ip-checker
+# IP CHECKER - ALPHA 1.0
 IP CHECKER
