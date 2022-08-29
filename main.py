@@ -1,3 +1,4 @@
+print('Loading...')
 import requests
 from pyfiglet import Figlet
 import folium
@@ -5,9 +6,10 @@ import time
 import colorama
 import ctypes
 import os
+import socket
 from colorama import init, Fore
 init()
-ctypes.windll.kernel32.SetConsoleTitleA("IP CHECKER | By Jesewe#8563")
+ctypes.windll.kernel32.SetConsoleTitleW('IP CHECKER | By Jesewe#8563')
 
 def get_info_by_ip(ip='127.0.0.1'):
     try:
@@ -35,12 +37,13 @@ while True:
     os.system("cls")
     print(Fore.MAGENTA + 'Welcome to IP CHECKER', Fore.GREEN + 'By', Fore.RED + 'Jesewe#8563')
     try:
+        print(Fore.WHITE + "\nYour IP: " + socket.gethostbyname(socket.gethostname()))
         ip = input(Fore.CYAN + '\nPlease enter a target IP: ')
     except Exception as e:
         os.system('cls')
         print(Fore.RED + '\n[!] Error: Invalid character')
         input(Fore.YELLOW + "\nPress Enter to exit the menu... ")
     else:
-        print('\n')
+        print('')
         get_info_by_ip(ip=ip)
         input(Fore.YELLOW + "\nPress Enter to exit the menu... ")
