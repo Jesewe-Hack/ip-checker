@@ -1,4 +1,3 @@
-print('Loading...')
 import requests
 from pyfiglet import Figlet
 import folium
@@ -9,7 +8,18 @@ import os
 import socket
 from colorama import init, Fore
 init()
-ctypes.windll.kernel32.SetConsoleTitleW('IP CHECKER | By Jesewe#8563')
+ctypes.windll.kernel32.SetConsoleTitleW('IP CHECKER | By Jesewe Hack')
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 def get_info_by_ip(ip='127.0.0.1'):
     try:
@@ -26,24 +36,34 @@ def get_info_by_ip(ip='127.0.0.1'):
             '[Lon]': response.get('lon'),
         }
         for k, v in data.items():
-            print(f'{k} : {v}')
+            print(bcolors.OKCYAN + f'                                    {k} : {v}')
         area = folium.Map(location=[response.get('lat'), response.get('lon')])
         area.save(f'{response.get("query")}_{response.get("city")}.html')
     except Exception as e:
         os.system("cls")
-        print(Fore.RED + '[!] Error: Invalid character')
-        
+        print(bcolors.FAIL + '                                    [!] Error: Invalid character')
+
+banner="""
+                                    ▪   ▄▄▄·     ▄▄·  ▄ .▄▄▄▄ . ▄▄· ▄ •▄ ▄▄▄ .▄▄▄  
+                                    ██ ▐█ ▄█    ▐█ ▌▪██▪▐█▀▄.▀·▐█ ▌▪█▌▄▌▪▀▄.▀·▀▄ █·
+                                    ▐█· ██▀·    ██ ▄▄██▀▐█▐▀▀▪▄██ ▄▄▐▀▀▄·▐▀▀▪▄▐▀▀▄ 
+                                    ▐█▌▐█▪·•    ▐███▌██▌▐▀▐█▄▄▌▐███▌▐█.█▌▐█▄▄▌▐█•█▌
+                                    ▀▀▀.▀       ·▀▀▀ ▀▀▀ · ▀▀▀ ·▀▀▀ ·▀  ▀ ▀▀▀ .▀  ▀
+"""
 while True:
     os.system("cls")
-    print(Fore.MAGENTA + 'Welcome to IP CHECKER', Fore.GREEN + 'By', Fore.RED + 'Jesewe#8563')
+    print(bcolors.OKGREEN + banner)
+    print(bcolors.OKBLUE + """
+                                [ Made by Jesewe Hack : https://github.com/Jesewe-Hack ]
+    """ + bcolors.ENDC)
     try:
-        print(Fore.WHITE + "\nYour IP: " + socket.gethostbyname(socket.gethostname()))
-        ip = input(Fore.CYAN + '\nPlease enter a target IP: ')
+        print(Fore.YELLOW + "                                                Your IP: " + socket.gethostbyname(socket.gethostname()))
+        ip = input(bcolors.OKBLUE + '\n                                  Please enter a target IP: ')
     except Exception as e:
         os.system('cls')
-        print(Fore.RED + '\n[!] Error: Invalid character')
-        input(Fore.YELLOW + "\nPress Enter to exit the menu... ")
+        print(bcolors.FAIL + '\n                                    [!] Error: Invalid character')
+        input(Fore.OKGREEN + "\n                                    Press Enter to exit the menu... ")
     else:
         print('')
         get_info_by_ip(ip=ip)
-        input(Fore.YELLOW + "\nPress Enter to exit the menu... ")
+        input(bcolors.OKGREEN + "\n                                    Press Enter to exit the menu... ")
