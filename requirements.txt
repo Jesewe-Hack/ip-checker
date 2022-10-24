@@ -1,0 +1,5 @@
+os
+ctypes
+colorama
+pyfiglet
+requests
