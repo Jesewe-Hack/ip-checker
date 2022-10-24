@@ -1,7 +1,11 @@
 # About IP CHECKER
 IP CHECKER is a small program that finds out information about an IP address. Made specifically in the Python programming language.
 
-# Latest updates
+# Latest updates:
+### Version 1.2 Changelog:
+- Fix colors
+- Added banner
+
 ### Version 1.1 Changelog:
 - Fix Console Title
 - Added line "Your IP"
@@ -10,4 +14,4 @@ IP CHECKER is a small program that finds out information about an IP address. Ma
 # Projects
 You can support our projects here You can support our projects here: https://www.donationalerts.com/r/jesewe
 
-Our website: https://bit.ly/jesewehack
+# Our website: https://bit.ly/jesewehack
