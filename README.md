@@ -3,7 +3,9 @@ IP CHECKER is a small program that finds out information about an IP address. Ma
 
 # Latest updates:
 ### Version 1.2 Changelog:
-- Fix colors
+- Fix color's
+- Fix error's
+- Remove Folium
 - Added banner
 
 ### Version 1.1 Changelog:
