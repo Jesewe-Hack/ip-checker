@@ -1,11 +1,9 @@
 import requests
 from pyfiglet import Figlet
-import folium
 import time
 import colorama
 import ctypes
 import os
-import socket
 from colorama import init, Fore
 init()
 ctypes.windll.kernel32.SetConsoleTitleW('IP CHECKER | By Jesewe Hack')
@@ -37,8 +35,6 @@ def get_info_by_ip(ip='127.0.0.1'):
         }
         for k, v in data.items():
             print(bcolors.OKCYAN + f'                                    {k} : {v}')
-        area = folium.Map(location=[response.get('lat'), response.get('lon')])
-        area.save(f'{response.get("query")}_{response.get("city")}.html')
     except Exception as e:
         os.system("cls")
         print(bcolors.FAIL + '                                    [!] Error: Invalid character')
@@ -57,12 +53,11 @@ while True:
                                 [ Made by Jesewe Hack : https://github.com/Jesewe-Hack ]
     """ + bcolors.ENDC)
     try:
-        print(Fore.YELLOW + "                                                Your IP: " + socket.gethostbyname(socket.gethostname()))
-        ip = input(bcolors.OKBLUE + '\n                                  Please enter a target IP: ')
+        ip = input(bcolors.OKBLUE + '                                  Please enter a target IP: ')
     except Exception as e:
         os.system('cls')
         print(bcolors.FAIL + '\n                                    [!] Error: Invalid character')
-        input(Fore.OKGREEN + "\n                                    Press Enter to exit the menu... ")
+        input(bcolors.OKGREEN + "\n                                    Press Enter to exit the menu... ")
     else:
         print('')
         get_info_by_ip(ip=ip)
